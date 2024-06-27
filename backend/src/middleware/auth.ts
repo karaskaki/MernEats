@@ -24,8 +24,11 @@ export const jwtParse = async (
   next: NextFunction
 ) => {
   const { authorization } = req.headers;
-  if (!authorization || authorization.startsWith("Bearer ")) {
-    return res.sendStatus(401);
+
+  if (!authorization || !authorization.startsWith("Bearer ")) {
+    return res.sendStatus(401).send({
+      message: "Token Not Found",
+    });
   }
 
   // Bearer jcnsdkvdvbdfkvndnvdfbd
@@ -38,7 +41,9 @@ export const jwtParse = async (
     const user = await User.findOne({ auth0Id });
 
     if (!user) {
-      res.sendStatus(401);
+      res.sendStatus(401).send({
+        message: "user not found",
+      });
     }
 
     req.userId = user?._id.toString() as string;
