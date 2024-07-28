@@ -40,7 +40,11 @@ const ImageSection = () => {
             <FormItem>
               <FormControl>
                 <Input
+<<<<<<< HEAD
                   className="bg-white cursor-pointer"
+=======
+                  className="bg-white"
+>>>>>>> 71ae65f97fd511cdf668c9bda94007416a1bbe50
                   type="file"
                   accept=".jpg, .jpeg, .png"
                   onChange={(event) =>
