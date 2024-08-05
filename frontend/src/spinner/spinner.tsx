@@ -11,7 +11,7 @@ const spinner = ({ isLoading = true }: Props) => {
         <ClipLoader
           color="#FFA500"
           loading={isLoading}
-          size={70}
+          size={45}
           aria-label="Loading Spinner"
           data-testid="loader"
         />
