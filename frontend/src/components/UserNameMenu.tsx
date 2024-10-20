@@ -39,9 +39,7 @@ const UserNameMenu = () => {
         <Separator />
         <DropdownMenuItem>
           <Button
-            onClick={() => logout({
-                returnTo: window.location.origin, // Redirects to home page after logout
-            })}
+            onClick={() => logout({ returnTo: window.location.origin })}
             className="flex flex-1 text-lg font-bold bg-orange-500"
           >
             Log Out
